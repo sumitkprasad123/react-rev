@@ -7,8 +7,8 @@ const TodoItems = (props) => {
   }
   console.log({"props":props})
   return (
-    <div>
-      {title}{" -- "}{status?"Completed":"Not Completed"}
+    <div style={{display:"flex",justifyContent:"center",alignItems:"center",gap:"20px",marginTop:"10px"}}>
+      {title}{" -- "}{status?"Completed":"Not Completed"} 
       <button onClick={() =>Toggle(id)}>Toggle</button>
       <button onClick={() =>handleDelete(id)}>Delete</button>
     </div>
