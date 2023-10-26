@@ -15,6 +15,13 @@ const Todo = () => {
        setTodo([...todo,newTodo])
     }
     
+   const Delete = (id) => {
+      let delTodo = todo.filter((el,i) => {
+         return el.id !==id
+      })
+      setTodo(delTodo)
+   }
+
     console.log({"todo":todo})
   return (
     <div>
@@ -23,7 +30,7 @@ const Todo = () => {
            handleText = {handleText}
         />
         {
-         todo && todo.map((item,i) => <TodoItems key={item.id} {...item} />)
+         todo && todo.map((item,i) => <TodoItems key={item.id} {...item} Delete={Delete}/>)
         }
     </div>
   )
