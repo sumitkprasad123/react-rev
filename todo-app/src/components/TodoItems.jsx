@@ -1,7 +1,7 @@
 import React from 'react'
 
 const TodoItems = (props) => {
-  const  {title,status,id,Delete} = props
+  const  {title,status,id,Delete,Toggle} = props
   const handleDelete = () => {
      Delete(id)
   }
@@ -9,6 +9,7 @@ const TodoItems = (props) => {
   return (
     <div>
       {title}{" -- "}{status?"Completed":"Not Completed"}
+      <button onClick={() =>Toggle(id)}>Toggle</button>
       <button onClick={() =>handleDelete(id)}>Delete</button>
     </div>
   )

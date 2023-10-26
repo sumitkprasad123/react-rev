@@ -22,6 +22,12 @@ const Todo = () => {
       setTodo(delTodo)
    }
 
+   const Toggle = (id) => {
+      let togTodo = todo.map((el,i) => {
+            return  el.id===id?{...el,"status":!el.status}:el
+      })
+      setTodo(togTodo)
+   }
     console.log({"todo":todo})
   return (
     <div>
@@ -30,7 +36,13 @@ const Todo = () => {
            handleText = {handleText}
         />
         {
-         todo && todo.map((item,i) => <TodoItems key={item.id} {...item} Delete={Delete}/>)
+         todo && todo.map((item,i) =>
+          <TodoItems
+            key={item.id} 
+            {...item} 
+            Delete={Delete}
+            Toggle={Toggle}
+          />)
         }
     </div>
   )
