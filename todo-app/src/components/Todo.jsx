@@ -14,14 +14,14 @@ const Todo = () => {
        }
        setTodo([...todo,newTodo])
     }
-    
+   // delete the todo
    const Delete = (id) => {
       let delTodo = todo.filter((el,i) => {
          return el.id !==id
       })
       setTodo(delTodo)
    }
-
+ // toggle the todo
    const Toggle = (id) => {
       let togTodo = todo.map((el,i) => {
             return  el.id===id?{...el,"status":!el.status}:el
